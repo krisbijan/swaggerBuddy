@@ -1,9 +1,13 @@
 import {MethodModel} from './swagger/method.model';
-import {Definition} from '@angular/compiler-cli';
+import {DefinitionModel} from './swagger/definition.model';
+import {MethodChangeModel} from './methodChange.model';
+import {DefinitionChangeModel} from './definitionChange.model';
 
 export class ChangesModel {
-  removedMethods:Array<MethodModel>;
-  addedMethods:Array<MethodModel>;
-  removedTypes:Array<Definition>;
-  addedTypes:Array<Definition>;
+  removedMethods:Map<string,MethodModel>;
+  addedMethods:Map<string,MethodModel>;
+  changedMethods:Map<string,MethodChangeModel>;
+  removedTypes:Map<string,DefinitionModel>;
+  addedTypes:Map<string,DefinitionModel>;
+  changedTypes:Map<string,DefinitionChangeModel>;
 }

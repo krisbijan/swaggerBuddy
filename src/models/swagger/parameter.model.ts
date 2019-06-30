@@ -1,6 +1,6 @@
 import {Deserializable} from '../deserializable.model';
 
-export class DefinitionModel   implements Deserializable{
+export class ParameterModel implements Deserializable{
 
   deserialize(input: any) {
     Object.assign(this, input);
