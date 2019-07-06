@@ -20,7 +20,8 @@ export class SwaggerModel implements Deserializable{
     this.paths = new Map<MethodsEnum, MethodModel>();
   }
 
-  deserialize(input: any): this {
+  deserialize(inSwagger: string): this {
+    const input = JSON.parse(inSwagger);
     Object.assign(this, input);
     this.info = new InfoModel().deserialize(input.info);
     Object.assign(this.schemes, input.schemes);
